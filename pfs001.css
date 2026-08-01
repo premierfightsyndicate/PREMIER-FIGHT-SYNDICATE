@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;600;800&display=swap');
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#050505;color:#f5f5f5;font-family:Inter,Arial,sans-serif}
+header{height:78px;padding:8px 7%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #252525;background:#050505;position:sticky;top:0;z-index:10}
+.brand{display:flex;align-items:center;gap:12px;color:#eee;text-decoration:none;font-size:11px;font-weight:800;letter-spacing:.13em}
+.brand img{width:55px;height:55px;object-fit:cover;border-radius:50%}
+.back{color:#e3b43d;text-decoration:none;font-size:11px;font-weight:800;letter-spacing:.1em}
+
+main{max-width:1180px;margin:auto}
+section{padding:80px 7%;border-bottom:1px solid #202020}
+.event-hero{min-height:620px;display:flex;flex-direction:column;justify-content:center;text-align:center;align-items:center;background:radial-gradient(circle at 50% 35%,#2a210b 0,#0c0b08 24%,#050505 62%)}
+.eyebrow{color:#e3b43d;font-size:11px;font-weight:800;letter-spacing:.22em}
+.event-number{font:900 clamp(80px,17vw,190px)/.8 'Barlow Condensed',Impact;text-transform:uppercase;margin-top:22px}
+.event-number span{color:#e3b43d}
+h1,h2{font-family:'Barlow Condensed',Impact;text-transform:uppercase}
+h1{font-size:clamp(40px,7vw,80px);margin:25px 0 10px}
+h2{font-size:65px;margin:12px 0 25px}
+.lead{max-width:650px;color:#aaa;line-height:1.8}
+.status{margin-top:25px;border:1px solid #80621d;color:#e3b43d;padding:12px 17px;font-size:11px;font-weight:800;letter-spacing:.12em}
+
+.event-meta{display:grid;grid-template-columns:repeat(4,1fr);padding-top:38px;padding-bottom:38px;background:#0a0a0a}
+.event-meta div{padding:12px 22px;border-right:1px solid #282828}
+.event-meta div:last-child{border:0}
+.event-meta small{display:block;color:#777;font-size:10px;font-weight:800;letter-spacing:.16em;margin-bottom:10px}
+.event-meta strong{font-size:14px}
+
+.card-section{padding-top:90px}
+.muted{color:#777;max-width:720px;line-height:1.7}
+.bout{margin-top:24px;border:1px solid #292929;background:#0a0a0a;padding:30px}
+.bout.main-event{border-color:#80621d;background:linear-gradient(110deg,#0b0b0b,#100d07)}
+.bout-label{color:#e3b43d;font-size:10px;font-weight:800;letter-spacing:.18em;margin-bottom:24px}
+.fighters{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px}
+.fighter{text-align:center;padding:28px 15px;border:1px solid #252525;background:#070707}
+.fighter span{display:block;font:900 45px/1 'Barlow Condensed',Impact;text-transform:uppercase}
+.fighter small{display:block;color:#777;font-size:10px;font-weight:800;letter-spacing:.13em;margin-top:10px}
+.vs{font:900 26px 'Barlow Condensed',Impact;color:#e3b43d}
+.bout-info{margin-top:22px;padding-top:18px;border-top:1px solid #252525;display:flex;justify-content:center;gap:12px;color:#777;font-size:11px;letter-spacing:.08em}
+.bout-info b{color:#aaa}
+.bout-info span{color:#e3b43d;margin-right:18px}
+.undercard-title{margin-top:55px}
+.undercard{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.mini{margin-top:14px;padding:20px}
+.mini .fighter{padding:18px 8px}
+.mini .fighter span{font-size:30px}
+.mini .vs{font-size:20px}
+.mini-info{text-align:center;color:#777;font-size:10px;font-weight:800;letter-spacing:.1em;margin-top:15px}
+
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+.info-grid p{color:#aaa;line-height:1.8}
+.note{color:#e3b43d!important;font-size:12px;font-weight:800}
+
+footer{text-align:center;padding:60px 20px;color:#777;border-top:1px solid #222}
+footer img{display:block;width:80px;height:80px;border-radius:50%;object-fit:cover;margin:0 auto 18px}
+footer strong{display:block;color:#ddd;font-size:12px;letter-spacing:.15em}
+footer span{display:block;margin-top:10px;font-size:12px}
+
+@media(max-width:750px){
+header{padding:8px 5%}
+.brand span{display:none}
+section{padding:65px 6%}
+.event-hero{min-height:570px}
+.event-meta{grid-template-columns:1fr 1fr}
+.event-meta div:nth-child(2){border-right:0}
+.event-meta div{border-bottom:1px solid #282828}
+.fighters{gap:8px}
+.fighter span{font-size:32px}
+.bout-info{flex-wrap:wrap}
+.undercard,.info-grid{grid-template-columns:1fr}
+h2{font-size:54px}
+}
