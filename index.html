@@ -6,146 +6,74 @@
 <title>PFS | Premier Fight Syndicate</title>
 <meta name="description" content="Premier Fight Syndicate — Fight. Respect. Legacy.">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
-body{background:#050505;color:#fff;font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
-a{text-decoration:none;color:inherit}button{font:inherit}
-:root{--g:#d4af37;--gl:#f1d675;--muted:#999;--line:rgba(212,175,55,.25)}
-nav{position:fixed;top:0;left:0;width:100%;height:76px;z-index:99;display:flex;align-items:center;justify-content:space-between;padding:0 6%;background:#050505aa;backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:.3s}
-nav.scrolled{background:#050505f5;border-color:var(--line)}
-.brand{display:flex;align-items:center;gap:12px}.brand img{width:52px;height:52px;object-fit:contain;border-radius:50%}
-.brand b{font-size:12px;letter-spacing:2px}.brand span{display:block;color:var(--g);font-size:8px;margin-top:3px;letter-spacing:2px}
-.links{display:flex;align-items:center;gap:20px}.links a{font-size:10px;font-weight:800;letter-spacing:1.2px;color:#ddd}.links a:hover{color:var(--g)}
-.navcta{padding:10px 15px;border:1px solid var(--g);color:var(--g)!important}.menu{display:none;background:none;border:0;color:#fff;font-size:27px}
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 6% 80px;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 45%,#d4af3730,transparent 24%),#050505}
-.hero-content{position:relative;z-index:1;max-width:900px}.hero-logo{width:140px;height:140px;object-fit:contain;margin-bottom:24px;filter:drop-shadow(0 0 20px #d4af3740)}
-.label{color:var(--g);font-size:10px;font-weight:900;letter-spacing:4px}.hero h1,.title{font-family:Impact,"Arial Narrow",sans-serif;text-transform:uppercase}
-.hero h1{font-size:clamp(62px,13vw,145px);line-height:.85;margin:18px 0}.hero h1 span,.title span{color:var(--g)}
-.tag{font-size:13px;font-weight:800;letter-spacing:5px}.desc,.sub{max-width:650px;margin:22px auto;color:var(--muted);line-height:1.8;font-size:14px}
-.buttons{display:flex;justify-content:center;gap:14px;margin-top:32px}.btn{display:inline-flex;align-items:center;justify-content:center;min-width:155px;padding:14px 20px;border:1px solid var(--g);font-size:10px;font-weight:900;letter-spacing:1.3px;transition:.25s}
-.gold{background:var(--g);color:#050505}.gold:hover{background:var(--gl);transform:translateY(-3px)}.outline{color:var(--g)}.outline:hover{background:var(--g);color:#050505;transform:translateY(-3px)}
-section{padding:95px 6%}.inner{max-width:1200px;margin:auto}.title{font-size:clamp(44px,7vw,78px);line-height:.9;margin-top:10px}
-.events{background:linear-gradient(120deg,#090909,#0c0a05,#090909);border-block:1px solid #191919}
-.event{margin-top:45px;padding:45px;border:1px solid var(--line);background:#080808}.eventtop{display:flex;justify-content:space-between;gap:20px}
-.eventname{font:900 clamp(50px,9vw,100px)/.8 Impact,Arial}.eventname span{color:var(--g)}.status{height:max-content;padding:9px 12px;border:1px solid var(--line);color:var(--g);font-size:9px;font-weight:900;letter-spacing:2px}
-.details{display:grid;grid-template-columns:repeat(3,1fr);margin-top:45px;border-block:1px solid #292929}.detail{padding:22px;border-right:1px solid #292929}.detail:last-child{border:0}
-.detail small{display:block;color:#777;font-size:9px;font-weight:900;letter-spacing:2px;margin-bottom:8px}.bottom{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:30px;color:#777;font-size:12px}
-.fighters{background:#050505}.fighter-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:45px}
-.fighter{overflow:hidden;border:1px solid #282828;background:#0b0b0b;transition:.3s}.fighter:hover{transform:translateY(-5px);border-color:var(--g)}
-.fighter-photo{height:250px;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle,#d4af3718,transparent 55%),#0b0b0b;color:#555;font:70px Impact}
-.fighter-info{padding:22px}.fighter-id{color:var(--g);font-size:8px;font-weight:900;letter-spacing:2px}.fighter-name{font:30px Impact;margin:7px 0}
-.fighter-meta{display:flex;justify-content:space-between;border-top:1px solid #222;padding-top:15px;color:#888;font-size:10px}.record{color:#fff;font-weight:bold}.placeholder{font-size:10px;color:#777;margin-top:10px}
-.rankings{background:#0a0a0a;border-block:1px solid #191919}.rank-table{margin-top:45px;border:1px solid #282828;background:#080808}
-.rank-head,.rank-row{display:grid;grid-template-columns:80px 1.5fr 1fr 1fr;gap:15px;align-items:center}.rank-head{padding:15px 20px;color:#777;font-size:9px;font-weight:900;letter-spacing:2px;border-bottom:1px solid #282828}
-.rank-row{padding:20px;border-bottom:1px solid #1c1c1c}.rank-row:last-child{border:0}.rank-num{font:32px Impact;color:var(--g)}.rank-name{font-weight:900}.rank-division,.rank-record{font-size:11px;color:#aaa}.rank-record{color:#fff;font-weight:bold}
-.rules{background:#050505}.rule-list{margin-top:45px;border-top:1px solid #292929}.rule{border-bottom:1px solid #292929}
-.rule button{width:100%;padding:22px 5px;background:none;border:0;color:#fff;display:flex;justify-content:space-between;align-items:center;text-align:left;cursor:pointer;font-size:12px;font-weight:900;letter-spacing:1px}
-.rule button span{color:var(--g);font-size:20px;transition:.2s}.rule.open button span{transform:rotate(45deg)}
-.rule-content{max-height:0;overflow:hidden;transition:max-height .3s ease;color:#999;line-height:1.8;font-size:13px}.rule-content p{padding:0 5px 22px}.rule.open .rule-content{max-height:250px}
-.about{background:#050505}.aboutgrid{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:center}.box{padding:42px;border:1px solid #262626;background:#0a0a0a}.box p{color:#aaa;line-height:1.9;font-size:14px}
-.points{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}.point{padding:17px;border-left:2px solid var(--g);background:#0d0d0d}.point b{display:block;font-size:11px;margin-bottom:5px}.point span{color:#777;font-size:10px}
-.contact{background:#0a0a0a;border-top:1px solid #181818}.contacts{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:45px}
-.card{padding:27px 20px;border:1px solid #272727;background:#080808;transition:.3s}.card:hover{transform:translateY(-5px);border-color:var(--g)}.icon{font-size:22px;margin-bottom:18px}
-.card small{display:block;color:#777;font-size:9px;font-weight:900;letter-spacing:2px;margin-bottom:8px}.card b{font-size:11px;word-break:break-word}
-footer{padding:50px 6% 28px;background:#030303;border-top:1px solid #222}.ftop{max-width:1200px;margin:auto;display:flex;justify-content:space-between;gap:35px}
-.fbrand{display:flex;align-items:center;gap:14px}.fbrand img{width:58px;height:58px;object-fit:contain;border-radius:50%}.fbrand b{font-size:10px;letter-spacing:2px}.fbrand span{display:block;color:var(--g);font-size:8px;letter-spacing:2px;margin-top:5px}
-.flink{display:flex;gap:18px;flex-wrap:wrap}.flink a{color:#777;font-size:9px;font-weight:bold}.flink a:hover{color:var(--g)}.fbottom{max-width:1200px;margin:40px auto 0;padding-top:18px;border-top:1px solid #191919;display:flex;justify-content:space-between;color:#555;font-size:9px}
-.reveal{opacity:0;transform:translateY(22px);transition:.7s}.show{opacity:1;transform:none}
-@media(max-width:850px){nav{padding:0 5%}.menu{display:block}.links{display:none;position:absolute;top:76px;left:0;width:100%;padding:12px 6% 20px;flex-direction:column;align-items:stretch;background:#050505f7;border-bottom:1px solid var(--line)}.links.open{display:flex}.links a{padding:13px 0;border-bottom:1px solid #1b1b1b}.navcta{text-align:center}.fighter-grid{grid-template-columns:1fr 1fr}.contacts{grid-template-columns:1fr 1fr}.aboutgrid{grid-template-columns:1fr}.ftop{flex-direction:column}}
-@media(max-width:600px){section{padding:75px 6%}.hero{padding-inline:6%}.hero-logo{width:115px;height:115px}.tag{letter-spacing:3px;font-size:11px}.buttons{flex-direction:column}.btn{width:100%}.event{padding:28px 20px}.eventtop,.bottom{flex-direction:column;align-items:stretch}.details{grid-template-columns:1fr}.detail{border-right:0;border-bottom:1px solid #292929}.detail:last-child{border:0}.fighter-grid{grid-template-columns:1fr}.fighter-photo{height:220px}.rank-head,.rank-row{grid-template-columns:45px 1.5fr 1fr}.rank-head div:nth-child(3),.rank-row .rank-division{display:none}.points{grid-template-columns:1fr}.contacts{grid-template-columns:1fr}.fbottom{flex-direction:column;gap:10px}}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:#050505;color:#fff;font-family:Arial,sans-serif;overflow-x:hidden}a{text-decoration:none;color:inherit}
+:root{--g:#d4af37;--gl:#f1d675;--m:#999;--line:rgba(212,175,55,.25)}
+nav{position:fixed;top:0;left:0;width:100%;height:76px;z-index:9;display:flex;align-items:center;justify-content:space-between;padding:0 7%;background:#050505aa;backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:.3s}
+nav.scrolled{background:#050505f5;border-color:var(--line)}.brand{display:flex;align-items:center;gap:12px}.brand img{width:52px;height:52px;object-fit:contain;border-radius:50%}.brand b{font-size:12px;letter-spacing:2px}.brand span{display:block;color:var(--g);font-size:9px;margin-top:3px;letter-spacing:2px}
+.links{display:flex;gap:28px;align-items:center}.links a{font-size:11px;font-weight:bold;letter-spacing:1.5px;color:#ddd}.links a:hover{color:var(--g)}.cta{padding:11px 18px;border:1px solid var(--g);color:var(--g)!important}.menu{display:none;background:none;border:0;color:#fff;font-size:28px}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 7% 80px;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 45%,#d4af3730,transparent 24%),radial-gradient(circle at 20% 50%,#d4af3714,transparent 30%),#050505}.hero:before{content:"";position:absolute;width:700px;height:700px;border-radius:50%;background:#d4af3710;filter:blur(100px);animation:smoke 7s infinite alternate}.hero>*{position:relative;z-index:1}@keyframes smoke{from{transform:translate(-100px,20px)}to{transform:translate(100px,-30px) scale(1.2)}}
+.hero img{width:145px;height:145px;object-fit:contain;filter:drop-shadow(0 0 20px #d4af3740);margin-bottom:25px}.eyebrow,.label{color:var(--g);font-size:10px;font-weight:900;letter-spacing:4px}.hero h1{font:900 clamp(60px,13vw,150px)/.85 Impact,Arial;text-transform:uppercase;margin:18px 0}.hero h1 span,.title span{color:var(--g)}.tag{font-weight:bold;letter-spacing:5px}.desc{max-width:650px;margin:25px auto;color:var(--m);line-height:1.8;font-size:14px}.buttons{display:flex;justify-content:center;gap:14px;margin-top:35px}.btn{display:inline-flex;justify-content:center;align-items:center;min-width:160px;padding:15px 22px;font-size:11px;font-weight:900;letter-spacing:1.5px;border:1px solid var(--g);transition:.3s}.gold{background:var(--g);color:#050505}.gold:hover{background:var(--gl);transform:translateY(-3px)}.outline{color:var(--g)}.outline:hover{background:var(--g);color:#050505;transform:translateY(-3px)}
+section{padding:100px 7%}.inner{max-width:1200px;margin:auto}.title{font:900 clamp(45px,7vw,80px)/.9 Impact,Arial;text-transform:uppercase;margin-top:12px}.desc2{max-width:650px;margin-top:22px;color:var(--m);line-height:1.8}
+.events{background:linear-gradient(120deg,#090909,#0c0a05,#090909);border-block:1px solid #191919}.event{margin-top:50px;padding:50px;border:1px solid var(--line);background:radial-gradient(circle at 75% 20%,#d4af371f,transparent 28%),#080808}.eventtop{display:flex;justify-content:space-between;gap:20px}.eventname{font:900 clamp(50px,9vw,100px)/.8 Impact,Arial}.eventname span{color:var(--g)}.status{padding:10px 13px;border:1px solid var(--line);color:var(--g);font-size:9px;font-weight:900;letter-spacing:2px;height:max-content}.details{display:grid;grid-template-columns:repeat(3,1fr);margin-top:50px;border-block:1px solid #292929}.detail{padding:24px;border-right:1px solid #292929}.detail:last-child{border:0}.detail small{display:block;color:#777;font-size:9px;font-weight:bold;letter-spacing:2px;margin-bottom:9px}.bottom{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:35px;color:#777;font-size:12px}
+.about{background:#050505}.aboutgrid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}.box{padding:45px;border:1px solid #262626;background:#0a0a0a}.box:before{content:"PFS";display:block;font:100px Impact;color:#d4af3714;margin-bottom:-45px}.box p{position:relative;color:#aaa;line-height:1.9;font-size:14px}.points{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:30px}.point{padding:18px;border-left:2px solid var(--g);background:#0d0d0d}.point b{display:block;font-size:12px;margin-bottom:5px}.point span{color:#777;font-size:11px}
+.contact{background:#0a0a0a;border-top:1px solid #181818}.contacts{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:50px}.card{padding:28px 22px;border:1px solid #272727;background:#080808;transition:.3s}.card:hover{transform:translateY(-5px);border-color:var(--g)}.icon{font-size:22px;margin-bottom:20px}.card small{display:block;color:#777;font-size:9px;font-weight:900;letter-spacing:2px;margin-bottom:9px}.card b{display:block;font-size:12px;word-break:break-word}.card b:hover{color:var(--g)}
+footer{padding:55px 7% 30px;background:#030303;border-top:1px solid #222}.ftop{max-width:1200px;margin:auto;display:flex;justify-content:space-between;gap:40px}.fbrand{display:flex;align-items:center;gap:15px}.fbrand img{width:60px;height:60px;object-fit:contain;border-radius:50%}.fbrand b{display:block;font-size:11px;letter-spacing:2px}.fbrand span{display:block;color:var(--g);font-size:9px;letter-spacing:2px;margin-top:6px}.flinks{display:flex;gap:20px;flex-wrap:wrap}.flinks a{color:#777;font-size:10px;font-weight:bold}.fbottom{max-width:1200px;margin:45px auto 0;padding-top:20px;border-top:1px solid #191919;display:flex;justify-content:space-between;color:#555;font-size:9px}
+.reveal{opacity:0;transform:translateY(25px);transition:.7s}.reveal.show{opacity:1;transform:none}
+@media(max-width:850px){nav{padding:0 5%}.menu{display:block}.links{display:none;position:absolute;top:76px;left:0;width:100%;padding:15px 6% 25px;flex-direction:column;align-items:stretch;background:#050505f7;border-bottom:1px solid var(--line)}.links.open{display:flex}.links a{padding:14px 0;border-bottom:1px solid #1b1b1b}.cta{text-align:center}.aboutgrid{grid-template-columns:1fr}.contacts{grid-template-columns:1fr 1fr}.ftop{flex-direction:column}}
+@media(max-width:600px){section{padding:75px 6%}.hero{padding-inline:6%}.hero img{width:115px;height:115px}.tag{letter-spacing:3px;font-size:11px}.buttons{flex-direction:column}.btn{width:100%}.event{padding:28px 20px}.eventtop,.bottom{flex-direction:column;align-items:stretch}.details{grid-template-columns:1fr}.detail{border-right:0;border-bottom:1px solid #292929}.detail:last-child{border:0}.box{padding:28px}.points{grid-template-columns:1fr}.contacts{grid-template-columns:1fr}.fbottom{flex-direction:column;gap:10px}}
 </style>
 </head>
 <body>
+
 <nav id="nav">
-<a class="brand" href="#home"><img src="logo.png" alt="PFS Logo"><div><b>PFS</b><span>PREMIER FIGHT SYNDICATE</span></div></a>
+<a href="#home" class="brand"><img src="logo.png" alt="PFS Logo"><div><b>PFS</b><span>PREMIER FIGHT SYNDICATE</span></div></a>
 <button class="menu" id="menu">☰</button>
-<div class="links" id="links">
-<a href="#home">HOME</a><a href="#events">EVENTS</a><a href="#fighters">FIGHTERS</a><a href="#rankings">RANKINGS</a><a href="#rules">RULEBOOK</a><a href="#about">ABOUT</a><a href="#contact" class="navcta">CONTACT</a>
-</div>
+<div class="links" id="links"><a href="#home">HOME</a><a href="#events">EVENTS</a><a href="#about">ABOUT</a><a href="#contact">CONTACT</a><a href="#events" class="cta">EXPLORE PFS</a></div>
 </nav>
 
-<section class="hero" id="home"><div class="hero-content reveal">
-<img class="hero-logo" src="logo.png" alt="Premier Fight Syndicate">
-<div class="label">PREMIER FIGHT SYNDICATE</div><h1>PFS <span>001</span></h1><div class="tag">FIGHT. RESPECT. LEGACY.</div>
-<p class="desc">A competitive fight platform built around discipline, respect, sportsmanship and the fighters who step into the ring.</p>
-<div class="buttons"><a class="btn gold" href="#events">EXPLORE PFS</a><a class="btn outline" href="#contact">CONTACT US</a></div>
-</div></section>
+<section class="hero" id="home">
+<div class="reveal">
+<img src="logo.png" alt="Premier Fight Syndicate">
+<div class="eyebrow">PREMIER FIGHT SYNDICATE</div>
+<h1>PFS <span>001</span></h1>
+<div class="tag">FIGHT. RESPECT. LEGACY.</div>
+<p class="desc">Welcome to Premier Fight Syndicate — a new platform built around competition, discipline, respect and the fighters who step into the ring.</p>
+<div class="buttons"><a href="#events" class="btn gold">EXPLORE PFS</a><a href="#contact" class="btn outline">CONTACT US</a></div>
+</div>
+</section>
 
 <section class="events" id="events"><div class="inner reveal">
-<div class="label">UPCOMING EVENT</div><h2 class="title">PFS <span>001</span></h2><p class="sub">The beginning of Premier Fight Syndicate. Official event details and the fight card will be announced soon.</p>
-<div class="event"><div class="eventtop"><div class="eventname">PFS <span>001</span></div><div class="status">COMING SOON</div></div>
+<div class="label">UPCOMING EVENT</div><h2 class="title">PFS <span>001</span></h2>
+<p class="desc2">The beginning of Premier Fight Syndicate. Official event details and the fight card will be announced soon.</p>
+<div class="event">
+<div class="eventtop"><div class="eventname">PFS <span>001</span></div><div class="status">COMING SOON</div></div>
 <div class="details"><div class="detail"><small>DATE</small><strong>TBA</strong></div><div class="detail"><small>VENUE</small><strong>TBA</strong></div><div class="detail"><small>LOCATION</small><strong>TBA</strong></div></div>
-<div class="bottom"><span>Official fight card coming soon.</span><a class="btn gold" href="#contact">EVENT INFORMATION</a></div></div>
+<div class="bottom"><span>Official fight card coming soon.</span><a href="#contact" class="btn gold">EVENT INFORMATION</a></div>
+</div>
 </div></section>
 
-<section class="fighters" id="fighters"><div class="inner reveal">
-<div class="label">PFS ROSTER</div><h2 class="title">THE <span>FIGHTERS.</span></h2><p class="sub">Official fighter profiles will be added here as the PFS roster is confirmed.</p>
-<div class="fighter-grid">
-<div class="fighter"><div class="fighter-photo">PFS</div><div class="fighter-info"><div class="fighter-id">PFS-0001</div><div class="fighter-name">FIGHTER TBA</div><div class="fighter-meta"><span>DIVISION</span><span class="record">RECORD TBA</span></div><div class="placeholder">Official profile coming soon.</div></div></div>
-<div class="fighter"><div class="fighter-photo">PFS</div><div class="fighter-info"><div class="fighter-id">PFS-0002</div><div class="fighter-name">FIGHTER TBA</div><div class="fighter-meta"><span>DIVISION</span><span class="record">RECORD TBA</span></div><div class="placeholder">Official profile coming soon.</div></div></div>
-<div class="fighter"><div class="fighter-photo">PFS</div><div class="fighter-info"><div class="fighter-id">PFS-0003</div><div class="fighter-name">FIGHTER TBA</div><div class="fighter-meta"><span>DIVISION</span><span class="record">RECORD TBA</span></div><div class="placeholder">Official profile coming soon.</div></div></div>
-</div></div></section>
-
-<section class="rankings" id="rankings"><div class="inner reveal">
-<div class="label">PFS RANKINGS</div><h2 class="title">OFFICIAL <span>RANKINGS.</span></h2><p class="sub">Rankings will be updated as official PFS bouts take place.</p>
-<div class="rank-table"><div class="rank-head"><div>RANK</div><div>FIGHTER</div><div>DIVISION</div><div>RECORD</div></div>
-<div class="rank-row"><div class="rank-num">01</div><div class="rank-name">TBA</div><div class="rank-division">TBA</div><div class="rank-record">TBA</div></div>
-<div class="rank-row"><div class="rank-num">02</div><div class="rank-name">TBA</div><div class="rank-division">TBA</div><div class="rank-record">TBA</div></div>
-<div class="rank-row"><div class="rank-num">03</div><div class="rank-name">TBA</div><div class="rank-division">TBA</div><div class="rank-record">TBA</div></div>
-<div class="rank-row"><div class="rank-num">04</div><div class="rank-name">TBA</div><div class="rank-division">TBA</div><div class="rank-record">TBA</div></div>
-</div></div></section>
-
-<section class="rules" id="rules"><div class="inner reveal">
-<div class="label">PFS FIGHT RULES</div><h2 class="title">THE <span>RULEBOOK.</span></h2><p class="sub">Website draft of the fight-rule section. Final competition rules should be approved by PFS officials before an event.</p>
-<div class="rule-list">
-<div class="rule"><button>06 — WEIGHT CLASSES <span>+</span></button><div class="rule-content"><p>Fighters must compete in the designated weight class for their bout. Official weigh-in requirements and any permitted allowance should be stated in event regulations.</p></div></div>
-<div class="rule"><button>07 — WEIGH-IN <span>+</span></button><div class="rule-content"><p>Fighters must attend the official weigh-in at the time and location announced by PFS. Failure to meet the required weight may affect bout eligibility.</p></div></div>
-<div class="rule"><button>08 — FIGHT EQUIPMENT <span>+</span></button><div class="rule-content"><p>Required gloves, hand protection and other approved equipment must be used as specified by PFS officials. Equipment must be checked before competition.</p></div></div>
-<div class="rule"><button>09 — FIGHT ATTIRE <span>+</span></button><div class="rule-content"><p>Fighters must wear approved competition attire and must not use equipment or clothing that creates an unfair advantage or safety risk.</p></div></div>
-<div class="rule"><button>10 — ROUNDS <span>+</span></button><div class="rule-content"><p>The number and duration of rounds will be announced for each PFS bout and must be followed by fighters and officials.</p></div></div>
-<div class="rule"><button>11 — BREAKS BETWEEN ROUNDS <span>+</span></button><div class="rule-content"><p>Fighters receive the official break between rounds. Only authorized corner personnel may provide assistance during the break.</p></div></div>
-<div class="rule"><button>12 — LEGAL TECHNIQUES <span>+</span></button><div class="rule-content"><p>Only techniques permitted by the specific PFS ruleset and bout classification may be used. Fighters must follow referee instructions.</p></div></div>
-<div class="rule"><button>13 — FOULS <span>+</span></button><div class="rule-content"><p>Any prohibited action is a foul. The referee may issue warnings, deduct points, stop the bout or take another permitted action.</p></div></div>
-<div class="rule"><button>14 — REFEREE AUTHORITY <span>+</span></button><div class="rule-content"><p>The referee is responsible for fighter safety and control of the bout. Fighters must immediately follow referee commands.</p></div></div>
-<div class="rule"><button>15 — KNOCKDOWN / COUNT <span>+</span></button><div class="rule-content"><p>Any knockdown procedure and count will follow the official PFS ruleset applicable to the bout.</p></div></div>
-<div class="rule"><button>16 — STANDING COUNT / SAFETY <span>+</span></button><div class="rule-content"><p>Where applicable, officials may use competition rules and medical assessment procedures to determine whether a fighter can safely continue.</p></div></div>
-<div class="rule"><button>17 — BOUT STOPPAGE <span>+</span></button><div class="rule-content"><p>A bout may be stopped by the referee, ringside medical professional or other authorized official when continuation is considered unsafe.</p></div></div>
-<div class="rule"><button>18 — JUDGING <span>+</span></button><div class="rule-content"><p>When a bout reaches the judges, the official judging criteria and scoring system designated by PFS for that event will determine the result.</p></div></div>
-<div class="rule"><button>19 — DECISIONS <span>+</span></button><div class="rule-content"><p>A bout may end by a decision or another result recognized by the official PFS ruleset.</p></div></div>
-<div class="rule"><button>20 — DRAW <span>+</span></button><div class="rule-content"><p>If the official scoring system results in an equal score, the bout may be declared a draw where permitted by event rules.</p></div></div>
-<div class="rule"><button>21 — CORNER TEAM <span>+</span></button><div class="rule-content"><p>Only authorized corner personnel may be present in the designated corner area and they must follow event officials' instructions.</p></div></div>
-<div class="rule"><button>22 — MEDICAL CHECKS <span>+</span></button><div class="rule-content"><p>Fighters may be required to complete pre-bout and post-bout medical checks. Medical officials may recommend that a fighter not compete or continue.</p></div></div>
-<div class="rule"><button>23 — UNSPORTSMANLIKE CONDUCT <span>+</span></button><div class="rule-content"><p>Fighters must compete respectfully and follow official instructions. Serious or repeated misconduct may result in penalties or disqualification under event regulations.</p></div></div>
-<div class="rule"><button>24 — OFFICIAL RESULT &amp; RECORD <span>+</span></button><div class="rule-content"><p>The official result of each bout will be recorded by PFS. Fighter records should be updated only from confirmed official results.</p></div></div>
-</div></div></section>
-
 <section class="about" id="about"><div class="inner"><div class="aboutgrid">
-<div class="reveal"><div class="label">ABOUT PFS</div><h2 class="title">BUILT FOR<br><span>FIGHTERS.</span></h2><p class="sub">Premier Fight Syndicate is being built with one simple idea — create a competitive platform where fighters can test themselves, earn respect and build their legacy.</p></div>
+<div class="reveal"><div class="label">ABOUT PFS</div><h2 class="title">BUILT FOR<br><span>FIGHTERS.</span></h2><p class="desc2">Premier Fight Syndicate is being built with one simple idea — create a competitive platform where fighters can test themselves, earn respect and build their legacy.</p></div>
 <div class="box reveal"><p>PFS aims to create an organized and respectful fight environment focused on competition, sportsmanship and fighter development.</p><div class="points"><div class="point"><b>COMPETITION</b><span>Test yourself.</span></div><div class="point"><b>RESPECT</b><span>Respect every opponent.</span></div><div class="point"><b>DISCIPLINE</b><span>Earn your place.</span></div><div class="point"><b>LEGACY</b><span>Build something lasting.</span></div></div></div>
 </div></div></section>
 
 <section class="contact" id="contact"><div class="inner reveal">
-<div class="label">GET IN TOUCH</div><h2 class="title">CONNECT WITH <span>PFS.</span></h2><p class="sub">Follow Premier Fight Syndicate and stay updated with upcoming events, announcements and fight news.</p>
+<div class="label">GET IN TOUCH</div><h2 class="title">CONNECT WITH <span>PFS.</span></h2><p class="desc2">Follow Premier Fight Syndicate and stay updated with upcoming events, announcements and fight news.</p>
 <div class="contacts">
 <a class="card" href="https://instagram.com/YOUR_PFS_INSTAGRAM" target="_blank"><div class="icon">📸</div><small>INSTAGRAM</small><b>@YOUR_PFS_INSTAGRAM</b></a>
 <a class="card" href="https://youtube.com/@YOUR_PFS_YOUTUBE" target="_blank"><div class="icon">▶️</div><small>YOUTUBE</small><b>PFS OFFICIAL</b></a>
 <a class="card" href="https://wa.me/YOUR_WHATSAPP_NUMBER" target="_blank"><div class="icon">💬</div><small>WHATSAPP</small><b>CONTACT PFS</b></a>
 <a class="card" href="mailto:YOUR_EMAIL@example.com"><div class="icon">📧</div><small>EMAIL</small><b>YOUR_EMAIL@example.com</b></a>
-</div></div></section>
+</div>
+</div></section>
 
-<footer><div class="ftop"><div class="fbrand"><img src="logo.png" alt="PFS"><div><b>PREMIER FIGHT SYNDICATE</b><span>FIGHT. RESPECT. LEGACY.</span></div></div>
-<div class="flink"><a href="#home">HOME</a><a href="#events">EVENTS</a><a href="#fighters">FIGHTERS</a><a href="#rankings">RANKINGS</a><a href="#rules">RULEBOOK</a><a href="#contact">CONTACT</a></div></div>
-<div class="fbottom"><span>© 2026 Premier Fight Syndicate. All Rights Reserved.</span><span>PFS — FIGHT. RESPECT. LEGACY.</span></div></footer>
+<footer><div class="ftop"><div class="fbrand"><img src="logo.png" alt="PFS"><div><b>PREMIER FIGHT SYNDICATE</b><span>FIGHT. RESPECT. LEGACY.</span></div></div><div class="flinks"><a href="#home">HOME</a><a href="#events">EVENTS</a><a href="#about">ABOUT</a><a href="#contact">CONTACT</a></div></div><div class="fbottom"><span>© 2026 Premier Fight Syndicate. All Rights Reserved.</span><span>PFS — FIGHT. RESPECT. LEGACY.</span></div></footer>
 
 <script>
 const nav=document.getElementById("nav"),menu=document.getElementById("menu"),links=document.getElementById("links");
-addEventListener("scroll",()=>nav.classList.toggle("scrolled",scrollY>40));
+window.addEventListener("scroll",()=>nav.classList.toggle("scrolled",scrollY>40));
 menu.onclick=()=>links.classList.toggle("open");
 document.querySelectorAll(".links a").forEach(a=>a.onclick=()=>links.classList.remove("open"));
-document.querySelectorAll(".rule button").forEach(btn=>btn.addEventListener("click",()=>{
- const item=btn.parentElement;
- document.querySelectorAll(".rule.open").forEach(x=>{if(x!==item)x.classList.remove("open")});
- item.classList.toggle("open");
-}));
 const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("show");obs.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll(".reveal").forEach(e=>obs.observe(e));
 </script>
